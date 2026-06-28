@@ -1,0 +1,17 @@
+# React
+frontend/node_modules/
+frontend/build/
+
+# Python
+**/__pycache__/
+*.pyc
+
+# Uploads
+ai_services/uploads/
+
+# VS Code
+.vscode/
+
+# Environment
+.env
+**/.env
