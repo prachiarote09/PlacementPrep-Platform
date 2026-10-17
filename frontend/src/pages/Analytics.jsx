@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const AI_URL = "http://localhost:8000";
-const SPRING_BOOT_URL = "http://localhost:8080";
+const AI_URL = process.env.REACT_APP_AI_SERVICE_URL;
+const SPRING_BOOT_URL = process.env.REACT_APP_API_BASE_URL;
 
 // ── Helpers ──
 function statusColor(status) {
