@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const BASE_URL = "http://localhost:8000/coding";
+const BASE_URL = process.env.REACT_APP_API_BASE_URL;
 const USER_ID = "user_001";
 
 const CATEGORIES = [
@@ -88,7 +88,7 @@ export default function CodingModule() {
     setCode("# Write your solution here\n\n");
     setActiveTab("problem");
     try {
-      const res = await fetch(`${BASE_URL}/generate-coding-question`, {
+      const res = await fetch(`${BASE_URL}/coding/generate-coding-question`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ category, difficulty, asked_titles: askedTitles }),
@@ -111,7 +111,7 @@ export default function CodingModule() {
     const nextLevel = hintLevel + 1;
     setLoadingHint(true);
     try {
-      const res = await fetch(`${BASE_URL}/get-hint`, {
+      const res = await fetch(`${BASE_URL}/coding/get-hint`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -138,7 +138,7 @@ export default function CodingModule() {
     setEvaluating(true);
     setError(null);
     try {
-      const res = await fetch(`${BASE_URL}/evaluate-code`, {
+      const res = await fetch(`${BASE_URL}/coding/evaluate-code`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
