@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from '../api/axios';
-
+const SPRING_BOOT_URL = process.env.REACT_APP_API_BASE_URL;
 export default function ResetPassword() {
 
   const [email, setEmail] = useState("");
@@ -19,7 +19,7 @@ export default function ResetPassword() {
     setLoading(true);
     try {
       const res = await axios.post(
-        "http://localhost:8080/api/auth/forgot-password",
+        `${SPRING_BOOT_URL}/api/auth/forgot-password`,
         { email }
       );
       setMessage(res.data);
@@ -38,7 +38,7 @@ export default function ResetPassword() {
     setLoading(true);
     try {
       const res = await axios.post(
-        "http://localhost:8080/api/auth/verify-otp",
+        `${SPRING_BOOT_URL}/api/auth/verify-otp`,
         { email, otp }
       );
       setMessage(res.data);
@@ -57,7 +57,7 @@ export default function ResetPassword() {
     setLoading(true);
     try {
       const res = await axios.post(
-        "http://localhost:8080/api/auth/reset-password",
+        `${SPRING_BOOT_URL}/api/auth/reset-password`,
         { email, otp, newPassword }
       );
       setMessage(res.data);
