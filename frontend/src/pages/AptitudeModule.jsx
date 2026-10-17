@@ -34,6 +34,7 @@ const CATEGORIES = {
 
 const STEPS = { CATEGORY: 0, TOPIC: 1, QUIZ: 2, RESULT: 3 };
 const BASE_URL = process.env.REACT_APP_AI_SERVICE_URL;
+const SPRING_BOOT_URL = process.env.REACT_APP_API_BASE_URL;
 
 function Spinner() {
   return (
@@ -131,7 +132,7 @@ export default function AptitudeModule() {
       else setFeedback(null);
 
       const token = localStorage.getItem("token");
-      await fetch("http://localhost:8080/api/dashboard/save-aptitude", {
+      await fetch(`${SPRING_BOOT_URL}/api/dashboard/save-aptitude`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
