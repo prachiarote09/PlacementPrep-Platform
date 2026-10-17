@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const SPRING_BOOT_URL = "http://localhost:8080/api/user/transcription";
-const AI_URL = "http://localhost:8000";
+const SPRING_BOOT_URL = `${process.env.REACT_APP_API_BASE_URL}/api/user/transcription`;
+const AI_URL = process.env.REACT_APP_AI_SERVICE_URL;
 
 // ======================================================
 // WAVEFORM
