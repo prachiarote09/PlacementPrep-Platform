@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const SPRING_BOOT_URL = "http://localhost:8080";
+const SPRING_BOOT_URL = process.env.REACT_APP_API_BASE_URL;
 
 const cardStyle = {
   background: "#1a1a24",
