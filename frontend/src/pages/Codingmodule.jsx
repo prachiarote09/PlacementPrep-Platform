@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const BASE_URL = process.env.REACT_APP_API_BASE_URL;
+const BASE_URL = process.env.REACT_APP_AI_SERVICE_URL;
+const SPRING_BOOT_URL = process.env.REACT_APP_API_BASE_URL;
 const USER_ID = "user_001";
 
 const CATEGORIES = [
@@ -158,7 +159,7 @@ export default function CodingModule() {
       setStep(STEPS.RESULT);
       // ── SAVE TO SPRING BOOT ──
       const token = localStorage.getItem("token");
-      await fetch("http://localhost:8080/api/dashboard/save-coding", {
+      await fetch(`${SPRING_BOOT_URL}/api/dashboard/save-coding`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
