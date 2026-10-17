@@ -27,15 +27,13 @@ groq_client = Groq(
 
 def call_gemini(prompt: str) -> str:  # keep same name, just swap inside
     response = groq_client.chat.completions.create(
-        model="llama-3.3-70b-versatile",  # free, fast, smart
+        model="openai/gpt-oss-120b",  # free, fast, smart
         messages=[{"role": "user", "content": prompt}]
     )
     return response.choices[0].message.content.strip()
 
 
-# ======================================================
 # REQUEST MODELS
-# ======================================================
 
 class QuizRequest(BaseModel):
     category: str    # "General Aptitude" or "Technical Aptitude"
