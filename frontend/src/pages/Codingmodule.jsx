@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const BASE_URL = "http://localhost:8000/coding";
@@ -79,7 +79,6 @@ export default function CodingModule() {
   const [activeTab, setActiveTab] = useState("problem");
   const [language, setLanguage] = useState("python");
 
-  const diffStyle = DIFFICULTIES.find(d => d.id === difficulty) || DIFFICULTIES[0];
   const navigate = useNavigate();
   async function fetchQuestion() {
     setLoading(true);
