@@ -33,7 +33,7 @@ const CATEGORIES = {
 };
 
 const STEPS = { CATEGORY: 0, TOPIC: 1, QUIZ: 2, RESULT: 3 };
-const BASE_URL = "http://localhost:8000";
+const BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 function Spinner() {
   return (
