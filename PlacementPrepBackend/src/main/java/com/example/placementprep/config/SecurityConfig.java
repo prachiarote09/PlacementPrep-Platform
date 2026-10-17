@@ -47,6 +47,7 @@ public class SecurityConfig {
                         "/api/auth/forgot-password",
                         "/api/auth/verify-otp",
                         "/api/auth/reset-password"
+                        "/aptitude/**"
                 ).permitAll()
 
                 // ✅ Admin APIs
