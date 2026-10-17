@@ -12,7 +12,7 @@ import java.util.Date;
 public class JwtUtil {
 
     // 🔐 Secret key (at least 32 chars for HS256)
-    private static final String SECRET_KEY = "YOUR_SECRET_KEY";
+    private static final String SECRET_KEY = "PrarthiPlacementPrep2026SecureKey8xQm4vNz7Lp2aBc";
 
     // ⏳ Token validity (1 day)
     private static final long EXPIRATION_TIME = 86400000;
