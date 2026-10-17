@@ -231,7 +231,7 @@ export default function VoiceRecorder() {
       setFinalResult(resultData);
       // ── SAVE TO SPRING BOOT ──
     const token = localStorage.getItem("token");
-    await fetch("http://localhost:8080/api/dashboard/save-interview", {
+    await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/dashboard/save-interview`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
